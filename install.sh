@@ -22,14 +22,16 @@ fi
 service_content=$(cat <<EOF
 [Unit]
 Description=Paper script service
+Wants=paper.timer
 
 [Service]
+Type=oneshot
 User=$(whoami)
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/bash "$HOME/.paper/paper"
+ExecStart=/bin/bash "$HOME/.paper/paper"
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
 EOF
 )
 
@@ -39,7 +41,8 @@ echo -e "$service_content" | sudo tee /etc/systemd/system/paper.service > /dev/n
 # Create the timer file content
 timer_content=$(cat <<EOF
 [Unit]
-Description=Cronjob for paper script
+Description=Timer for paper script
+Requires=paper.service
 
 [Timer]
 OnBootSec=1min

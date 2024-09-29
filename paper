@@ -11,5 +11,5 @@ if [ "$#" -gt 0 ]; then
     fi
 fi
 
-/usr/bin/nitrogen --random "$DEFAULT_PATH" --set-scaled # >/dev/null 2>&1
+DISPLAY=:0 /usr/bin/feh --bg-fill --randomize "$DEFAULT_PATH"
 

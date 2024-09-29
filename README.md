@@ -2,11 +2,11 @@
 
 ## Overview
 
-The **Paper** is a bash-based utility that allows users to change their desktop wallpaper at specified intervals using **Nitrogen**, a lightweight wallpaper manager. The script can be configured to use a default directory for wallpapers or a user-specified directory. It also sets up a systemd timer to automate the wallpaper changing process.
+The **Paper** is a bash-based utility that allows users to change their desktop wallpaper at specified intervals using **Feh**, a lightweight wallpaper manager. The script can be configured to use a default directory for wallpapers or a user-specified directory. It also sets up a systemd timer to automate the wallpaper changing process.
 
 ## Prerequisites
 
-- **Nitrogen**: Ensure that Nitrogen is installed on your system. You can install it using your package manager.
+- **Feh**: Ensure that feh is installed on your system. You can install it using your package manager.
 - **Systemd**: This script utilizes systemd for scheduling, so ensure your system uses systemd as the init system.
 
 #### Usage

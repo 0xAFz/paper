@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DEFAULT_PATH="$HOME/Pictures"
+
+if [ "$#" -gt 0 ]; then
+    if [ -e "$1" ]; then
+        DEFAULT_PATH="$1"
+    else
+        echo "Error: $1 is not a valid path." >&2
+        exit 1 
+    fi
+fi
+
+/usr/bin/nitrogen --random "$DEFAULT_PATH" --set-scaled # >/dev/null 2>&1
+

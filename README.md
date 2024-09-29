@@ -32,6 +32,14 @@ bash install.sh
 - The timer is configured to run the wallpaper changer every minute after boot (`OnBootSec=1min` and `OnUnitActiveSec=1min`). 
 - You can modify these values in the `install.sh` script under the timer configuration section.
 
+### Uninstallation
+```bash
+sudo systemctl disable --now paper.timer
+sudo rm /etc/systemd/system/paper.timer
+sudo rm /etc/systemd/system/paper.service
+rm -rf $HOME/.paper
+```
+
 ## Additional Notes
 
 - You can adjust the script to specify different display environments if you are using multiple displays.
